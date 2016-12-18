@@ -19,6 +19,7 @@ public class KORScene extends GameScene {
 	
 	public static final float SPAWN_DELAY = 2f;
 	public static final int SPAWNED_SCORE = 50;
+	public static final float ITEM_DELAY = 3f;
 	
 	private Random random;
 	private Font global_font;
@@ -29,8 +30,11 @@ public class KORScene extends GameScene {
 	private int hp;
 	private int score;
 	private float last_spawn_time;
+	private float last_item_time;
 	private int spawn_count;
+	private int item_count;
 	private ArrayList<Word> spawn_list;
+	private ArrayList<Word> item_list;
 	
 	@Override
 	public void initialize() {
@@ -44,8 +48,12 @@ public class KORScene extends GameScene {
 		this.random = new Random();
 		
 		this.last_spawn_time = 0f;
-		this.spawn_count = 100;
+		this.spawn_count = 1;
 		this.spawn_list = new ArrayList<>();
+		
+		this.last_item_time = 0f;
+		this.item_count = 2;
+		this.item_list = new ArrayList<>();
 		
 		this.hp_ui = new GameSprite("res/hp_5.png");
 		this.hp = 5;
@@ -78,8 +86,6 @@ public class KORScene extends GameScene {
 		this.test_input.is_kor = true;
 		this.test_input.max_char = 32;
 		this.test_input.bind_key();
-		
-		this.spawn();
 	}
 
 	@Override
@@ -105,6 +111,20 @@ public class KORScene extends GameScene {
 					}
 				}
 				
+				for(Iterator<Word> iterator = this.item_list.iterator() ; iterator.hasNext() ; ) {
+					Word spawned = iterator.next();
+					
+					if(spawned.text.text.equals(this.test_input.text)) {
+						if(this.hp < 5)
+							++this.hp;
+						
+						this.update_hp_ui();
+						
+						spawned.dispose();
+						iterator.remove();
+					}
+				}
+				
 				this.test_input.clear_text();
 			}
 		}
@@ -112,6 +132,10 @@ public class KORScene extends GameScene {
 		this.spawn();
 		this.move_spawned();
 		this.clip_spawned();
+		
+		this.item();
+		this.move_item();
+		this.clip_item();
 	}
 	
 	private void spawn() {
@@ -154,6 +178,42 @@ public class KORScene extends GameScene {
 					Game.set_game_scene(Scenes.over_scene);
 				}
 				
+				spawned.dispose();
+				iterator.remove();
+			}
+		}
+	}
+	
+	private void item() {
+		if(Game.game_time.elapsed_time >= this.last_item_time + ENGScene.ITEM_DELAY) {
+			this.last_item_time = Game.game_time.elapsed_time;
+			
+			for(int count = 0 ; count < this.item_count ; ++count)
+				this.spawn_item();
+		}
+	}
+	
+	private void spawn_item() {
+		Word spawned = new Word(this.global_font, 27f, 1, 1, 0, 0, Color.MAGENTA);
+		spawned.text.text = "еш";
+		spawned.x = this.roll_random(-.5f * Game.GAME_FRAME_WIDTH, .5f * Game.GAME_FRAME_WIDTH);
+		spawned.y = this.roll_random(Game.GAME_FRAME_HEIGHT * -.5f - 100f, Game.GAME_FRAME_HEIGHT * -.5f + 100f);
+		
+		this.item_list.add(spawned);
+	}
+	
+	private void move_item() {
+		for(Word spawned : this.item_list) {
+			spawned.y += spawned.speed * Game.game_time.delta_time;
+			spawned.sync_position();
+		}
+	}
+	
+	private void clip_item() {
+		for(Iterator<Word> iterator = this.item_list.iterator() ; iterator.hasNext() ; ) {
+			Word spawned = iterator.next();
+			
+			if(spawned.y >= Game.GAME_FRAME_HEIGHT * .5f) {
 				spawned.dispose();
 				iterator.remove();
 			}
