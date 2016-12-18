@@ -96,7 +96,7 @@ public class ENGScene extends GameScene {
 				for(Iterator<Word> iterator = this.spawn_list.iterator() ; iterator.hasNext() ; ) {
 					Word spawned = iterator.next();
 					
-					if(spawned.text.equals(this.test_input.text)) {
+					if(spawned.text.text.equals(this.test_input.text)) {
 						this.score += ENGScene.SPAWNED_SCORE;
 						this.update_score_ui();
 						
