@@ -2,5 +2,147 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-assimp.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-assimp-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-bgfx.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-bgfx-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-glfw.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-glfw-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-jawt.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-jawt-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-jemalloc.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-jemalloc-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-lmdb.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-lmdb-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-nanovg.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-nanovg-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-nfd.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-nfd-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-nuklear.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-nuklear-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-openal.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-openal-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-opencl.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-opencl-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-opengl.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-opengl-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-opengles.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-opengles-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-ovr.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-ovr-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-par.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-par-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-sse.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-sse-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-stb.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-stb-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-tinyfd.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-tinyfd-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-vulkan.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-vulkan-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="LWJGL/lwjgl-xxhash.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-xxhash-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="LWJGL/lwjgl.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SMT/LWJGL/lwjgl-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SMT/LWJGL"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-assimp-natives-windows.jar"/>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-bgfx-natives-windows.jar"/>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-glfw-natives-windows.jar"/>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-jemalloc-natives-windows.jar"/>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-lmdb-natives-windows.jar"/>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-nanovg-natives-windows.jar"/>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-natives-windows.jar"/>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-nfd-natives-windows.jar"/>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-nuklear-natives-windows.jar"/>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-openal-natives-windows.jar"/>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-ovr-natives-windows.jar"/>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-par-natives-windows.jar"/>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-sse-natives-windows.jar"/>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-stb-natives-windows.jar"/>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-tinyfd-natives-windows.jar"/>
+	<classpathentry kind="lib" path="LWJGL/lwjgl-xxhash-natives-windows.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
