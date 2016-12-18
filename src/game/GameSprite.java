@@ -29,14 +29,9 @@ public class GameSprite implements GameRenderable, GameDisposable {
 	public void reset_sprite(String sprite_path) {
 		ImageIcon image_icon = new ImageIcon(sprite_path);
 		
-		int w = image_icon.getIconWidth();
-		int h = image_icon.getIconHeight();
 		this.sprite = image_icon.getImage();
-		
-		this.x += (this.width - w) * .5f;
-		this.y += (h - this.height) * .5f;
-		this.width = w;
-		this.height = h;
+		this.width = image_icon.getIconWidth();
+		this.height = image_icon.getIconHeight();
 	}
 
 	@Override

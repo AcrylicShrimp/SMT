@@ -38,6 +38,8 @@ public class Game {
 	
 	public static void set_game_scene(GameScene new_game_scene) {
 		Game.game_sound.stop_sound_all();
+		Game.game_time.elapsed_time = 0f;
+		Game.game_time.elapsed_time_unscaled = 0f;
 		(Game.game_scene = new_game_scene).initialize();
 	}
 	
