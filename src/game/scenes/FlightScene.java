@@ -16,7 +16,6 @@ import javax.sound.sampled.Clip;
 import game.Game;
 import game.GameScene;
 import game.GameSprite;
-import game.rank.RankingManager;
 
 public class FlightScene extends GameScene {
 
@@ -372,7 +371,7 @@ public class FlightScene extends GameScene {
 
 					if (this.player_hp == 0) {
 						try {
-							RankingManager.add_rank(this.player_score);
+							//RankingManager.add_rank(this.player_score);
 							Thread.sleep(2000);
 						} catch (InterruptedException e) {
 						}
@@ -393,7 +392,7 @@ public class FlightScene extends GameScene {
 
 					if (this.player_hp == 0) {
 						try {
-							RankingManager.add_rank(this.player_score);
+							//RankingManager.add_rank(this.player_score);
 							Thread.sleep(2000);
 						} catch (InterruptedException e) {
 						}

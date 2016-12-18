@@ -8,7 +8,7 @@ public class Run {
 		// TODO Auto-generated method stub
 		
 		Game.init_game();
-		Game.set_game_scene(Scenes.test_scene);
+		Game.set_game_scene(Scenes.rank_scene);
 		Game.loop_game_logic();
 		
 		System.exit(0);

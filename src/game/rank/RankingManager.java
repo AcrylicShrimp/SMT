@@ -12,7 +12,7 @@ import java.util.Comparator;
 
 public class RankingManager {
 
-	public static ArrayList<Integer> rank_list;
+	public static ArrayList<RankData> rank_list;
 
 	private static DataOutputStream output;
 
@@ -34,16 +34,32 @@ public class RankingManager {
 
 				DataInputStream input = new DataInputStream(new FileInputStream(rank_file));
 
-				while (input.available() >= 4)
-					RankingManager.rank_list.add(input.readInt());
+				while (input.available() >= 1) {
+					RankData sData = new RankData();
+					sData.play_date = input.readUTF();
+					sData.player_name = input.readUTF();
+					sData.game_score = input.readInt();
+					
+					RankingManager.rank_list.add(sData);
+				}
 
 				input.close();
 
-				RankingManager.rank_list.sort(new Comparator<Integer>() {
+				RankingManager.rank_list.sort(new Comparator<RankData>() {
 					@Override
-					public int compare(Integer o1, Integer o2) {
+					public int compare(RankData arg0, RankData arg1) {
 						// TODO Auto-generated method stub
-						return Integer.compare(o2, o1);
+						int comp = Integer.compare(arg1.game_score, arg0.game_score);
+						
+						if(comp != 0)
+							return comp;
+						
+						comp = arg1.play_date.compareTo(arg0.play_date);
+						
+						if(comp != 0)
+							return comp;
+						
+						return arg0.player_name.compareTo(arg1.player_name);
 					}
 				});
 
@@ -57,18 +73,30 @@ public class RankingManager {
 		}
 	}
 
-	public static void add_rank(int rank_score) {
-		RankingManager.rank_list.add(rank_score);
-		RankingManager.rank_list.sort(new Comparator<Integer>() {
+	public static void add_rank(RankData rank_data) {
+		RankingManager.rank_list.add(rank_data);
+		RankingManager.rank_list.sort(new Comparator<RankData>() {
 			@Override
-			public int compare(Integer o1, Integer o2) {
+			public int compare(RankData arg0, RankData arg1) {
 				// TODO Auto-generated method stub
-				return Integer.compare(o2, o1);
+				int comp = Integer.compare(arg1.game_score, arg0.game_score);
+				
+				if(comp != 0)
+					return comp;
+				
+				comp = arg1.play_date.compareTo(arg0.play_date);
+				
+				if(comp != 0)
+					return comp;
+				
+				return arg0.player_name.compareTo(arg1.player_name);
 			}
 		});
-
+		
 		try {
-			RankingManager.output.writeInt(rank_score);
+			RankingManager.output.writeUTF(rank_data.play_date);
+			RankingManager.output.writeUTF(rank_data.player_name);
+			RankingManager.output.writeInt(rank_data.game_score);
 			RankingManager.output.flush();
 		} catch (IOException e) {
 		}

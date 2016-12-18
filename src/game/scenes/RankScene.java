@@ -12,13 +12,14 @@ import game.Game;
 import game.GameInput;
 import game.GameScene;
 import game.GameSprite;
+import game.rank.RankData;
 import game.rank.RankingManager;
 
 public class RankScene extends GameScene {
 
 	public static final int MAX_RANK_NUM = 7;
-	public static final float RENDER_X_FIRST = 320f;
-	public static final float RENDER_X_SECOND = 500f;
+	public static final float RENDER_X_FIRST = 0f;
+	public static final float RENDER_X_SECOND = 80f;
 	public static final float RENDER_Y_STEP = 70f;
 
 	private GameSprite title_button;
@@ -37,7 +38,7 @@ public class RankScene extends GameScene {
 
 		try {
 			this.score_font = Font.createFont(Font.TRUETYPE_FONT, new File("res/font/SeoulHangangB.ttf"));
-			this.score_font = this.score_font.deriveFont(64f);
+			this.score_font = this.score_font.deriveFont(48f);
 		} catch (Exception e) {
 		}
 	}
@@ -71,8 +72,12 @@ public class RankScene extends GameScene {
 		float render_y = RankScene.RENDER_Y_STEP;
 
 		for (int count = 0; count < this.max_num; ++count) {
+			RankData rank_data = RankingManager.rank_list.get(count);
+			
 			graphics.drawString((count + 1) + this.generate_num(count + 1), RankScene.RENDER_X_FIRST, render_y);
-			graphics.drawString(": " + RankingManager.rank_list.get(count), RankScene.RENDER_X_SECOND, render_y);
+			graphics.drawString(
+					": " + rank_data.play_date + " / " + rank_data.player_name + " / " + rank_data.game_score,
+					RankScene.RENDER_X_SECOND, render_y);
 
 			render_y += RankScene.RENDER_Y_STEP;
 		}

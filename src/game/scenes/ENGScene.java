@@ -44,7 +44,7 @@ public class ENGScene extends GameScene {
 		this.random = new Random();
 		
 		this.last_spawn_time = 0f;
-		this.spawn_count = 1;
+		this.spawn_count = 100;
 		this.spawn_list = new ArrayList<>();
 		
 		this.hp_ui = new GameSprite("res/hp_5.png");
@@ -75,7 +75,7 @@ public class ENGScene extends GameScene {
 				Color.WHITE);
 		
 		this.test_input.y = (Game.GAME_FRAME_HEIGHT - 27f) * .5f;
-		this.test_input.is_kor = true;
+		this.test_input.is_kor = false;
 		this.test_input.max_char = 32;
 		this.test_input.bind_key();
 		
@@ -127,7 +127,7 @@ public class ENGScene extends GameScene {
 	
 	private void spawn_word() {
 		Word spawned = new Word(this.global_font, 31f, 1, 1, 0, 0, Color.CYAN);
-		spawned.text = "a";
+		spawned.text.text = "a";
 		spawned.x = this.roll_random(-.5f * Game.GAME_FRAME_WIDTH, .5f * Game.GAME_FRAME_WIDTH);
 		spawned.y = this.roll_random(Game.GAME_FRAME_HEIGHT * -.5f - 100f, Game.GAME_FRAME_HEIGHT * -.5f + 100f);
 		
@@ -135,20 +135,24 @@ public class ENGScene extends GameScene {
 	}
 	
 	private void move_spawned() {
-		for(Word spawned : this.spawn_list)
+		for(Word spawned : this.spawn_list) {
 			spawned.y += spawned.speed * Game.game_time.delta_time;
+			spawned.sync_position();
+		}
 	}
 	
 	private void clip_spawned() {
 		for(Iterator<Word> iterator = this.spawn_list.iterator() ; iterator.hasNext() ; ) {
-			GameText spawned = iterator.next();
+			Word spawned = iterator.next();
 			
 			if(spawned.y >= Game.GAME_FRAME_HEIGHT * .5f) {
 				--this.hp;
 				this.update_hp_ui();
 				
-				if(this.hp == 0)
+				if(this.hp == 0) {
+					Scenes.over_scene.last_score = this.score;					
 					Game.set_game_scene(Scenes.over_scene);
+				}
 				
 				spawned.dispose();
 				iterator.remove();
